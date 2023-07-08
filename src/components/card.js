@@ -6,10 +6,10 @@ const Card = (props) =>{
     // const incrementCount = () => {
     //   setCount(count + 1);
     // };
-  
+
     return (
       <div>
-        <div className="card">
+        <div className="card1" onClick={props.fun}>
         <img src={props.image} className="card-image" alt="bulbasaur"/>
         <p className="pokemon-name">{props.name}</p>
         </div>

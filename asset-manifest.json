@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/memory-card/static/css/main.809b626f.css",
+    "main.js": "/memory-card/static/js/main.5946b744.js",
+    "static/media/bulbasaur.png": "/memory-card/static/media/bulbasaur.12d0b40cb9218612a60f.png",
+    "static/media/sprigatito.png": "/memory-card/static/media/sprigatito.4c118ff603b1df8cdb6c.png",
+    "static/media/rowlet.png": "/memory-card/static/media/rowlet.823cd532673c5033a8e6.png",
+    "static/media/leafeon.png": "/memory-card/static/media/leafeon.7ed4c45ed5fbaec528c5.png",
+    "static/media/chespin.png": "/memory-card/static/media/chespin.5333be6e5208c488fa2e.png",
+    "static/media/snivy.png": "/memory-card/static/media/snivy.444774657429ce63d9a5.png",
+    "static/media/treecko.png": "/memory-card/static/media/treecko.45fdfec05dcbff2fd88b.png",
+    "static/media/grookey.png": "/memory-card/static/media/grookey.1a6a96e25af133f9515f.png",
+    "static/media/turtwig.png": "/memory-card/static/media/turtwig.d0fb0ed4fc37a4c19fae.png",
+    "static/media/chikorita.png": "/memory-card/static/media/chikorita.0f285a8bce6124f24f9d.png",
+    "index.html": "/memory-card/index.html",
+    "main.809b626f.css.map": "/memory-card/static/css/main.809b626f.css.map",
+    "main.5946b744.js.map": "/memory-card/static/js/main.5946b744.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.809b626f.css",
+    "static/js/main.5946b744.js"
+  ]
+}

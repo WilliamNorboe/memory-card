@@ -35,6 +35,13 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+#scores{
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  font-size: 30px;
+}
 /* .App {
   text-align: center;
 }

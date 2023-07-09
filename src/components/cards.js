@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Card from "./card";
 
@@ -20,6 +20,18 @@ const Pokemon = (name, image)=>{
         }
 }
 
+const shuffle = (ar) =>{
+  let shuffled = [];
+  let rand;
+  while(ar.length != 0){
+    rand = Math.floor(Math.random() * ar.length);
+    shuffled.push(ar.splice(rand, 1)[0]);
+  }
+  return shuffled;
+}
+
+let clicked = [];
+
 const Cards = () =>{
 
     // let tpokemon = [
@@ -39,17 +51,38 @@ const Cards = () =>{
     tpokemon.push(Pokemon("Sprigatitio", sprigatito));
 
     const [pokemon, setPokemon] = useState(tpokemon);
+    const [score, setScore] = useState(0);
 
-    const cardClicked = () =>{
-        console.log("d");
-        let cpy = [...pokemon]
-        cpy.push(Pokemon("Bulbasaur", bulbasaur));
+    const cardClicked = (name) =>{
+        let tempScore = score
+        console.log(clicked);
+        if(clicked.includes(name)){
+          tempScore = 0;
+          clicked = [];
+        }
+        else{
+          tempScore++;
+          clicked.push(name);
+        }
+        setScore(tempScore);
+        let cpy = [...pokemon];
+        cpy = shuffle(cpy);
+        
+        // cpy.push(Pokemon("Bulbasaur", bulbasaur));
         setPokemon(cpy);
     }
 
+    useEffect(() => {    
+      // document.addEventListener("click", changeColorOnClick);
+      let max = document.getElementById("max");
+      if(max.textContent < score){
+        max.textContent = score;
+      }
+    }, [score]);
+
     let cards = [];
     for(let i = 0; i < pokemon.length; ++i){
-        console.log("5");
+        // console.log("5");
         cards.push(<Card image = {pokemon[i].image} name = {pokemon[i].name} key ={uniqid()} fun = {cardClicked}/>);
         // console.log("f");
     }
@@ -59,8 +92,14 @@ const Cards = () =>{
     //     item.addEventListener('click', cardClicked);});
 
     return (
-      <div className="cards">
-        {cards}
+      <div>
+        <div id="scores">
+          <p>Score: {score}</p>
+          <p>Max Score: <span id = "max">0</span></p>
+        </div>
+        <div className="cards">
+          {cards}
+        </div>
       </div>
     );
 }
